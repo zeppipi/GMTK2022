@@ -11,14 +11,22 @@ public class PlayerBehaviour : Actor
     [SerializeField]
     private int neededExperience;   //how much xp need for a level up
 
-    //Dice and the set of moves
+    //Dice
     [SerializeField, ReadOnly]
     private int dice;
+    private Dice diceScript;
 
-
+    //Proccess before the game starts
+    void Start()
+    {
+        diceScript = this.GetComponent<Dice>();
+    }
+    
     //Execute the moves
     public override void executeMoves()
     {
+        dice = diceScript.roll();
+
         for(int index = 0; index < dice; index++)
         {
             this.actionsList[index].execute();   //This is assuming the actions class has an execute function
@@ -29,14 +37,24 @@ public class PlayerBehaviour : Actor
     void levelUp()
     {
         levelSetter(this.level + 1);
+        Debug.Log("level up!");
     }
     
     //Update is called once per frame
-    void Update()
+    public override void Update()
     {
-        if (experience > neededExperience)
+        base.Update();
+
+        if (experience >= neededExperience)
         {
             levelUp();
+            this.experience = 0;
         }
+    }
+
+    //Player gets xp points
+    public void xpAdder(int xp)
+    {
+        this.experience += xp;
     }
 }
