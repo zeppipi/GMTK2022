@@ -16,8 +16,8 @@ public class Dice : MonoBehaviour {
     }
 
     // Rolls the Dice
-    public int roll(int listSize){
-        int ranIndex = UnityEngine.Random.Range(1, listSize);
+    public int roll(){
+        int ranIndex = UnityEngine.Random.Range(1, arLst.Count);
         return (int) arLst[ranIndex];
     }
 
