@@ -6,7 +6,9 @@ public class LightAttCard : ActionCard
 {
     void Start()
     {
-        action = new LightAttAction();
+        GameObject newActionObject = new GameObject();
+        newActionObject.AddComponent<LightAttAction>();
+        actionObject = newActionObject;
         setUpCard();
     }
 }

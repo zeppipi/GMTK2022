@@ -6,26 +6,26 @@ using UnityEngine.UI;
 public class PlannerItemView : MonoBehaviour
 {
     [SerializeField]    
-    private string actionId;
+    private Action actionId;
     private Image image;
     private Button button;
+
+    public GameObject prefab;
     // Start is called before the first frame update
     void Start()
     {
         image = GetComponent<Image>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // Debug.Log(this.gameObject.name + "'s Action is: " + action);
-    }
-
-    public string GetAction(){
+    public Action GetAction(){
         return actionId;
     }
 
-    public void setAction(string newAction){
-        actionId = newAction;
+    public void setAction(GameObject newActionObject){
+        
+        actionId = newActionObject.GetComponent<Action>();
+        // GameObject gO = Instantiate(newAction.gameObject) as GameObject;
+        // actionId = gO.GetComponent<Action>();
+        // Debug.Log(actionId.GetType());
     }
 }

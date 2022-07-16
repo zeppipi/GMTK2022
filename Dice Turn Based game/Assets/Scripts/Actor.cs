@@ -8,6 +8,8 @@ abstract public class Actor : MonoBehaviour
     //Basic stats
     [SerializeField]
     protected int health;
+    protected int maxHealth;
+
     [SerializeField]
     protected int level;
 
@@ -39,8 +41,20 @@ abstract public class Actor : MonoBehaviour
     //Health adder, should function for both healing and hurting
     public void healthAdder(int health)
     {
-        this.health += health;
+        if (this.health + health > maxHealth){
+            this.health = maxHealth;
+        } else {
+            this.health += health;
+        }
         Debug.Log(this.health);
+    }
+
+    public void hurt(int health){
+        if (this.health - health < 0){
+            this.health = 0;
+        } else {
+            this.health -= health;
+        }
     }
     
 }

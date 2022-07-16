@@ -8,7 +8,7 @@ public abstract class ActionCard : MonoBehaviour
     [SerializeField]
     protected PlannerController plannerController;
 
-    protected Action action;
+    protected GameObject actionObject;
     protected Image image;
     protected Button button;
     protected void setUpCard(){
@@ -19,7 +19,7 @@ public abstract class ActionCard : MonoBehaviour
     }
 
     public void addActionOnClick(){
-        plannerController.addCounter(image.color, action);
+        plannerController.addCounter(image.color, actionObject);
     }
     
 

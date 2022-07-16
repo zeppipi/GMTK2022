@@ -16,17 +16,18 @@ public class PlannerController : MonoBehaviour
         
     }
 
-    public void addCounter(Color color, Action action){
+    public void addCounter(Color color, GameObject actionObject){
+        Action action = actionObject.GetComponent<Action>();
         int counter = plannerModel.counter;
         bool isNotFull = plannerModel.counter <= 5;
-        bool isValidMove = plannerModel.isActionValid(action.getId());
+
+        bool isValidMove = plannerModel.isActionValid(action.getId()); 
         if (isNotFull && isValidMove){
-            Debug.Log(counter);
             Button button = plannerModel.getButtonByCounter(counter);
-            Debug.Log(button);
             Image image = plannerModel.getImageByCounter(counter);
             PlannerItemView piv = plannerModel.getPIVbyCounter(counter);
-            piv.setAction(action.getId());
+            piv.setAction(actionObject);
+            Debug.Log(piv.GetAction().getId());
             plannerView.toggleButton(button);
             plannerView.changeImageColor(image, color);
             plannerModel.increaseCounter();

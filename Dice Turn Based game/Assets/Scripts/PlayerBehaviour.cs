@@ -44,7 +44,7 @@ public class PlayerBehaviour : Actor
     public override void Update()
     {
         base.Update();
-
+        
         if (experience >= neededExperience)
         {
             levelUp();

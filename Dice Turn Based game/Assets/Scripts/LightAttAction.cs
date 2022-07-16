@@ -8,6 +8,10 @@ public class LightAttAction : Action
         this.ID = "LightAttack";
     }
 
+
+    public override void execute(){
+
+    }
     public new string getId(){
         return ID;
     }

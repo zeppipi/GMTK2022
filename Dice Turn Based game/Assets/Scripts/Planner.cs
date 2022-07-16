@@ -12,10 +12,11 @@ public class Planner : MonoBehaviour
         int amount = 0;
         for (int i = 0; i < buttonObjects.Count; i++){
             PlannerItemView piv = buttonObjects[i].GetComponent<PlannerItemView>();
-            if (piv.GetAction().Equals(actionID)){
+            if (piv.GetAction() != null && piv.GetAction().getId().Equals(actionID)){
                 amount += 1;
             }
         }
+        Debug.Log(amount);
         if (amount >= 2){
             return false;
         } else {

@@ -6,7 +6,15 @@ public class HeavyAttCard : ActionCard
 {
     void Start()
     {
-        action = new HeavyAttAction();
+        GameObject newActionObject = new GameObject();
+        newActionObject.AddComponent<HeavyAttAction>();
+        actionObject = newActionObject;
         setUpCard();
     }
+    
+    // void Start()
+    // {
+    //     action = new HeavyAttAction();
+    //     setUpCard();
+    // }
 }

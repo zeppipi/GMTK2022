@@ -6,7 +6,9 @@ public class HealCard : ActionCard
 {
     void Start()
     {
-        action = new HealAction();
+        GameObject newActionObject = new GameObject();
+        newActionObject.AddComponent<HealAction>();
+        actionObject = newActionObject;
         setUpCard();
     }
 
