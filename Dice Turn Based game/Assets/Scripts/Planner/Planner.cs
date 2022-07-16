@@ -23,7 +23,6 @@ public class Planner : MonoBehaviour
                 amount += 1;
             }
         }
-        Debug.Log(amount);
         if (amount >= 2){
             return false;
         } else {
@@ -39,7 +38,6 @@ public class Planner : MonoBehaviour
     
     //Getter for a specific button in the list of buttons in the planner
     public Button getButtonByCounter(int counter){
-        Debug.Log(buttonObjects.Count);
         Button button = buttonObjects[counter].GetComponent<Button>();
         return button;
     }
@@ -59,4 +57,23 @@ public class Planner : MonoBehaviour
     public void increaseCounter(){
         counter += 1;
     }
+
+    public List<GameObject> getButtons(){
+        return new List<GameObject>(buttonObjects);
+    }
+
+    public void clearButtons(){
+        for(int i = 0; i < buttonObjects.Count; i++){
+            Button pivButton = buttonObjects[i].GetComponent<Button>();
+            pivButton.interactable = false;
+
+            Image img = buttonObjects[i].GetComponent<Image>();
+            img.color = Color.white;
+
+            PlannerItemView piv = buttonObjects[i].GetComponent<PlannerItemView>();
+            piv.setAction(null);
+        }
+        counter = 0;
+    }
 }
+

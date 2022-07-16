@@ -16,9 +16,9 @@ public class HealAction : Action
         this.ID = "Heal";
     }
 
-    public override void execute(){
+    public override void execute(int delay, int position, int rolls){
         player.healthAdder(50);
-
+        Debug.Log("ACTION: Player Healed");
     }
 
     public new string getId(){

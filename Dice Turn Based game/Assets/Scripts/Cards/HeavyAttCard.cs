@@ -11,10 +11,4 @@ public class HeavyAttCard : ActionCard
         actionObject = newActionObject;
         setUpCard();
     }
-    
-    // void Start()
-    // {
-    //     action = new HeavyAttAction();
-    //     setUpCard();
-    // }
 }

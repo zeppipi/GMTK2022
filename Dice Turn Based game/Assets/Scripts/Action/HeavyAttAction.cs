@@ -11,26 +11,35 @@ public class HeavyAttAction : Action
     [SerializeField]
     private BaseEnemyScript enemy;
 
-    private Button button;
     public HeavyAttAction(){
         this.ID = "HeavyAttack";
     }
 
     private void Start() {
-        button = GetComponent<Button>();
-        button.onClick.RemoveAllListeners();
-        button.onClick.AddListener(() => execute());
+
     }
 
-    public override void execute(){
+    public override void execute(int delay, int position, int rolls){
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehaviour>();
 
         // Only attack the first enemy in the array
         enemy = GameObject.FindGameObjectsWithTag("Enemy")[0].GetComponent<BaseEnemyScript>();
 
-        enemy.hurt(25);
+        if(rolls > delay + position){
+            enemy.hurt(25);
+            Debug.Log("ACTION: Heavy Attack");
+        } else {
+            Debug.Log("ACTION: Heavy Attack Failed");
+        }
+
+        
     }
     public new string getId(){
         return ID;
+    }
+
+    public override int getDelay()
+    {
+        return 1;
     }
 }

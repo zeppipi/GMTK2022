@@ -8,10 +8,12 @@ public class PlannerItemView : MonoBehaviour
 {
     //Set how this item looks like
     [SerializeField]    
-    private Action actionId;
+    private Action action;
     private Image image;
     [SerializeField]
     private Button button;
+
+    private int position = -1;
     
     // Start is called before the first frame update
     void Start()
@@ -20,14 +22,26 @@ public class PlannerItemView : MonoBehaviour
     }
 
     public Action GetAction(){
-        return actionId;
+        return action;
     }
 
-    public void setAction(GameObject newActionObject){
-        
-        actionId = newActionObject.GetComponent<Action>();
-        // GameObject gO = Instantiate(newAction.gameObject) as GameObject;
-        // actionId = gO.GetComponent<Action>();
-        // Debug.Log(actionId.GetType());
+    public void setAction(GameObject newActionObject){  
+        if (newActionObject != null) {
+            action = newActionObject.GetComponent<Action>();
+        } else {
+            action = null;
+        }
+    }
+
+    public void setPosition (int position){
+        this.position = position;
+    }
+
+    public void resetPosition(){
+        this.position = -1;
+    }
+
+    public int getPosition(){
+        return this.position;
     }
 }

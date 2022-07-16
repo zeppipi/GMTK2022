@@ -29,7 +29,7 @@ public class PlannerController : MonoBehaviour
             Image image = plannerModel.getImageByCounter(counter);
             PlannerItemView piv = plannerModel.getPIVbyCounter(counter);
             piv.setAction(actionObject);
-            Debug.Log(piv.GetAction().getId());
+            piv.setPosition(counter);
             plannerView.toggleButton(button);
             plannerView.changeImageColor(image, color);
             plannerModel.increaseCounter();
