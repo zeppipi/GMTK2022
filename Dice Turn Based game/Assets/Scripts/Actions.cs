@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //The class for making actions, should be treated like an abstract class
-public class Actions : MonoBehaviour
+abstract public class Actions : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class Actions : MonoBehaviour
     }
 
     //Executes what the action should do
-    public void execute()
+    public virtual void execute()
     {
 
     }

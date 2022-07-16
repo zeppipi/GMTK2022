@@ -12,22 +12,35 @@ abstract public class Actor : MonoBehaviour
     protected int level;
 
     //Actor's action(s)
-    [SerializeField, ReadOnly]
+    [SerializeField]
     protected Actions[] actionsList;
 
     //Execute the move(s)
     public virtual void executeMoves(){ }
 
-    //Level setter
+    //What should be done when this actor dies?
+    public virtual void Dies(){ }
+
+    //Virtual update method, functions for any scenarios that should be detected in real time
+    public virtual void Update()
+    {
+        if(health <= 0)
+        {
+            Dies();
+        }
+    }
+    
+    //Level setter, should function for instantiating the levels of enemies and levelling up the player
     public void levelSetter(int level)
     {
         this.level = level;
     }
 
-    //Health setter
-    public void healthSetter(int health)
+    //Health adder, should function for both healing and hurting
+    public void healthAdder(int health)
     {
-        this.health = health;
+        this.health += health;
+        Debug.Log(this.health);
     }
     
 }
