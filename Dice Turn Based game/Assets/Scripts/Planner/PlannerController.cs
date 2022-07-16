@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//This class is the logic of the planner
 public class PlannerController : MonoBehaviour
 {
+    //Get the instance of the planner view and planner model
     private PlannerView plannerView;
     private Planner plannerModel;
 

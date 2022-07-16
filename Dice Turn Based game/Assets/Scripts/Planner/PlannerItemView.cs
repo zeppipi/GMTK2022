@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Class to control the viewing of the specific items in the planner
 public class PlannerItemView : MonoBehaviour
 {
+    //Set how this item looks like
     [SerializeField]    
     private Action actionId;
     private Image image;
+    [SerializeField]
     private Button button;
-
-    public GameObject prefab;
+    
     // Start is called before the first frame update
     void Start()
     {
