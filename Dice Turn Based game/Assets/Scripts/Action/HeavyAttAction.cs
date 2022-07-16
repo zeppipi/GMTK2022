@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//A heavy attack class, release extra damage with a delay
 public class HeavyAttAction : Action
 {   
+    //Set damage and delay
     [SerializeField]
-    private PlayerBehaviour player;
+    private int damage;
+    [SerializeField]
+    private int delay;
 
-    [SerializeField]
+    private PlayerBehaviour player;
     private BaseEnemyScript enemy;
 
     public HeavyAttAction(){
@@ -19,6 +23,7 @@ public class HeavyAttAction : Action
 
     }
 
+    //Execute
     public override void execute(int delay, int position, int rolls){
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehaviour>();
 
@@ -26,7 +31,7 @@ public class HeavyAttAction : Action
         enemy = GameObject.FindGameObjectsWithTag("Enemy")[0].GetComponent<BaseEnemyScript>();
 
         if(rolls > delay + position){
-            enemy.hurt(25);
+            enemy.hurt(damage);
             Debug.Log("ACTION: Heavy Attack");
         } else {
             Debug.Log("ACTION: Heavy Attack Failed");
@@ -38,8 +43,25 @@ public class HeavyAttAction : Action
         return ID;
     }
 
+    //Getters and setters for the damage
+    public int getDamage()
+    {
+        return this.damage;
+    }
+
+    public void setDamage(int damage)
+    {
+        this.damage = damage;
+    }
+    
+    //Getters and setters for the delay
     public override int getDelay()
     {
-        return 1;
+        return delay;
+    }
+
+    public void setDelay(int delay)
+    {
+        this.delay = delay;
     }
 }

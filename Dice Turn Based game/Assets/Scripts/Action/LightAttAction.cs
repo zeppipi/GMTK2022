@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Class that does a quick light attack
 public class LightAttAction : Action
 {
 
