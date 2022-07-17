@@ -27,7 +27,7 @@ public abstract class BaseEnemyScript : Actor
         playerScript = playerObject.GetComponent<PlayerBehaviour>();
     }
 
-    public abstract string attack(int rolls);
+    public abstract string attack(int rolls, int turns);
 
     public int getHealth(){
         return health;

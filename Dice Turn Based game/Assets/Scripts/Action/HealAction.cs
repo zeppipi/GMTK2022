@@ -15,7 +15,7 @@ public class HealAction : Action
     //Get the reference of the script
     private void Start() {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehaviour>();
-
+        this.actionType = "Defensive";
     }
     public HealAction(){
         this.ID = "Heal";
@@ -23,7 +23,8 @@ public class HealAction : Action
 
     //Execute
     public override string execute(int delay, int position, int rolls){
-        player.healthAdder(heal);
+        player.healthAdder(heal + extraBuff);
+        resetExtraBuff();
         return " Heals by " + heal;
     }
 
