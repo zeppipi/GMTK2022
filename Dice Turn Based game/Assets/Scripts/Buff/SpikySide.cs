@@ -17,6 +17,6 @@ public class SpikySide : Buff
         return "NotBuff";
     }
     public override string getDesc(int side){
-        return "";
+        return "Rolling a " + side + " will damage your enemy";
     }
 }

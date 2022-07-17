@@ -1854,6 +1854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopPanel: {fileID: 2670936243220095375}
+  image: {fileID: 0}
 --- !u!1 &2670936243509960733
 GameObject:
   m_ObjectHideFlags: 0
@@ -2479,6 +2480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopPanel: {fileID: 2670936243220095375}
+  image: {fileID: 0}
 --- !u!1 &2670936243757298158
 GameObject:
   m_ObjectHideFlags: 0
@@ -4183,6 +4185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopPanel: {fileID: 2670936243220095375}
+  image: {fileID: 0}
 --- !u!1 &2670936244432761190
 GameObject:
   m_ObjectHideFlags: 0

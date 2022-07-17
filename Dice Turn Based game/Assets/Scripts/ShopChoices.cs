@@ -33,7 +33,7 @@ public class ShopChoices : MonoBehaviour
             int side = dice.roll();
             int randomBuff = UnityEngine.Random.Range(1, buffs.Length);
             items[i].setBuff(buffs[randomBuff], side, buttonObjects[side-1].GetComponent<PlannerItemView>());
-            texts[i].SetText(buffs[randomBuff].getDesc(side));
+            //texts[i].SetText(buffs[randomBuff].GetComponent<Buff>().getDesc(side));
         }
     }
 }

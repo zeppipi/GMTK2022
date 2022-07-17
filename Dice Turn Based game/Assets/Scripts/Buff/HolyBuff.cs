@@ -12,7 +12,7 @@ public class HolyBuff : Buff
     }
 
     public override string getDesc(int side){
-        return "";
+        return "Any healing moves placed on move " + side + ", heals slightly stronger";
     }
 
     public override string getBuffType(){

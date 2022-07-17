@@ -18,7 +18,7 @@ public class HolySide : Buff
     }
 
     public override string getDesc(int side){
-        return "";
+        return "Rolling a " + side + " will grant you some healing";
     }
 
     

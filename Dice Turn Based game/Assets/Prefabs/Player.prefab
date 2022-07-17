@@ -100,20 +100,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f8f851b666ba4440a103f37cfae3611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
-  maxHealth: 500
+  health: 250
+  maxHealth: 250
   level: 1
   actionsList: []
   experience: 0
   neededExperience: 100
-  healLevelUpPercentage: 0
-  maxHealthIncreasePercentage: 0
+  healLevelUpPercentage: 0.3
+  maxHealthIncreasePercentage: 0.3
+  maxExperienceIncreasePercentage: 0.3
   shopPanel: {fileID: 0}
   dice: 0
-  baseDamage: 0
-  damageIncreasePercentage: 0
-  baseHeal: 0
-  healIncreasePercentage: 0
+  baseDamage: 10
+  damageIncreasePercentage: 0.3
+  baseHeal: 5
+  healIncreasePercentage: 0.3
   playerAnimator: {fileID: 6986166629444062128}
 --- !u!95 &6986166629444062128
 Animator:

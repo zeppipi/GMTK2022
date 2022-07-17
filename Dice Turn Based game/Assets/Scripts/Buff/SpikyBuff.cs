@@ -15,6 +15,6 @@ public class SpikyBuff : Buff
         return "Offensive";
     }
     public override string getDesc(int side){
-        return "";
+        return "Any attacking moves placed on move " + side + ", hits slightly harder";
     }
 }
