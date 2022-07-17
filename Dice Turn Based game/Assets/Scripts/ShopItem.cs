@@ -25,6 +25,7 @@ public class ShopItem : MonoBehaviour
 
     public void purchase(){
         // This is where we put our buff into PIV
+        Debug.Log(pivToSet);
         pivToSet.addBuff(offeredBuff);
         shopPanel.SetActive(false);
     }

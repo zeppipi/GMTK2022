@@ -97,5 +97,6 @@ public class FightSystem : MonoBehaviour
         }
         // Clear the button object
         plannerModel.clearButtons();
+        player.levelUp();
     }
 }

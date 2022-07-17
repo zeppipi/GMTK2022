@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1708423124490140908}
   - component: {fileID: 3039925609328531914}
   m_Layer: 0
-  m_Name: HolySide
+  m_Name: HolyBuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -17,6 +17,7 @@ public class ShopChoices : MonoBehaviour
 
     private void Awake() {
         buttonObjects = plannerModel.getButtons();
+        dice = GameObject.FindGameObjectWithTag("Dice").GetComponent<Dice>();
     }
     private void Start() {
         dice = GameObject.FindGameObjectWithTag("Dice").GetComponent<Dice>();

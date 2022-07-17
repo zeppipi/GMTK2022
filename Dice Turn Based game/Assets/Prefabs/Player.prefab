@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5022135226560343181}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 346.5, y: 195, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -104,7 +104,14 @@ MonoBehaviour:
   actionsList: []
   experience: 0
   neededExperience: 100
+  healLevelUpPercentage: 0
+  maxHealthIncreasePercentage: 0
+  shopPanel: {fileID: 5631436852591518894, guid: 03b31df209a9bd24d9cc5273ae567766, type: 3}
   dice: 0
+  baseDamage: 0
+  damageIncreasePercentage: 0
+  baseHeal: 0
+  healIncreasePercentage: 0
   playerAnimator: {fileID: 6986166629444062128}
 --- !u!95 &6986166629444062128
 Animator:
