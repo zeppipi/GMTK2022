@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject playerSpawnPos;
 
     [SerializeField]
     private GameObject enemySpawnPos;
@@ -21,10 +19,7 @@ public class GameManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        // Spawn Player
-        Instantiate(playerPrefab, playerSpawnPos.transform);
-        
+    {        
         // Spawn Enemy
         Instantiate(slimePrefab, enemySpawnPos.transform);
     }
@@ -38,8 +33,8 @@ public class GameManager : MonoBehaviour
     }
 
     private void spawnEnemy(){
-        int random = UnityEngine.Random.Range(1, enemyPrefabs.Length);
-        Instantiate(enemyPrefabs[random], enemySpawnPos.transform);
+        // int random = UnityEngine.Random.Range(1, enemyPrefabs.Length);
+        Instantiate(enemyPrefabs[2], enemySpawnPos.transform);
     }
 
     private bool isEnemyExist(){
