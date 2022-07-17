@@ -53,6 +53,18 @@ public class PlayerBehaviour : Actor
     //Description
     private Description playerDescription;
 
+    //Proccess before the game starts
+    void Start()
+    {
+        diceScript = this.GetComponent<Dice>();
+        playerAnimator = this.GetComponent<Animator>();
+        playerDescription = this.GetComponent<Description>();
+        
+        //Keep track of the description
+        playerDescription.setTempDesc("\nHealth: " + getHealth() + "\nLevel: " + getLevel());
+        playerDescription.setDesc(playerDescription.getDesc());
+    }
+
     //Player has leveled up
     public void levelUp()
     {
@@ -66,14 +78,14 @@ public class PlayerBehaviour : Actor
         this.healthAdder(healAmount);
 
         // increase max health
-        maxHealth = maxHealth + (int) (maxHealth * maxHealthIncreasePercentage);
+        maxHealth = (int) (maxHealth * maxHealthIncreasePercentage);
 
         // increase my base damage and base heal
-        baseDamage = baseDamage + (int) (baseDamage * damageIncreasePercentage);
+        baseDamage = (int) (baseDamage * damageIncreasePercentage);
 
-        baseHeal = baseHeal + (int) (baseDamage * healIncreasePercentage);
+        baseHeal = (int) (baseDamage * healIncreasePercentage);
 
-        neededExperience = neededExperience + (int) (neededExperience * maxExperienceIncreasePercentage);
+        neededExperience = (int) (neededExperience * maxExperienceIncreasePercentage);
         Debug.Log("level up!");
     }
     

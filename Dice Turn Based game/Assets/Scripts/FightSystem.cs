@@ -93,6 +93,9 @@ public class FightSystem : MonoBehaviour
             BaseEnemyScript enemyScript = enemies[i].GetComponent<BaseEnemyScript>();
             string enemyLog = enemyScript.attack(rolls, turns);
             logManager.addLog(enemyLog);
+
+            //Update description
+            enemyScript.updateDesc();
         }
         
         // Clear the button object
