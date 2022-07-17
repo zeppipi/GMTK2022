@@ -9,6 +9,9 @@ public class Pawn : BaseEnemyScript
 
     [SerializeField]
     private float increasePercentage;
+    private void Start() {
+        recalcHealth();
+    }
 
     public override string attack(int rolls, int turns){
         if (rolls >= 3){

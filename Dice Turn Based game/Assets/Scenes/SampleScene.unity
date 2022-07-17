@@ -179,9 +179,45 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5022135226560343180, guid: 18429076f8ca371458cb6d94f257205a, type: 3}
+      propertyPath: health
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022135226560343180, guid: 18429076f8ca371458cb6d94f257205a, type: 3}
+      propertyPath: baseHeal
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022135226560343180, guid: 18429076f8ca371458cb6d94f257205a, type: 3}
+      propertyPath: maxHealth
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022135226560343180, guid: 18429076f8ca371458cb6d94f257205a, type: 3}
       propertyPath: shopPanel
       value: 
       objectReference: {fileID: 1617732102}
+    - target: {fileID: 5022135226560343180, guid: 18429076f8ca371458cb6d94f257205a, type: 3}
+      propertyPath: baseDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022135226560343180, guid: 18429076f8ca371458cb6d94f257205a, type: 3}
+      propertyPath: healLevelUpPercentage
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022135226560343180, guid: 18429076f8ca371458cb6d94f257205a, type: 3}
+      propertyPath: healIncreasePercentage
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022135226560343180, guid: 18429076f8ca371458cb6d94f257205a, type: 3}
+      propertyPath: damageIncreasePercentage
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022135226560343180, guid: 18429076f8ca371458cb6d94f257205a, type: 3}
+      propertyPath: maxHealthIncreasePercentage
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022135226560343180, guid: 18429076f8ca371458cb6d94f257205a, type: 3}
+      propertyPath: maxExperienceIncreasePercentage
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5022135226560343181, guid: 18429076f8ca371458cb6d94f257205a, type: 3}
       propertyPath: m_Name
       value: Player
@@ -425,8 +461,11 @@ MonoBehaviour:
   playerPrefab: {fileID: 5022135226560343181, guid: 18429076f8ca371458cb6d94f257205a, type: 3}
   enemyPrefabs:
   - {fileID: 3367222169660575856, guid: 0ea559849a789af4d88cb7de74507738, type: 3}
-  - {fileID: 1806937190425314156, guid: fa150266d1db3e543865ddcd6ba18d3a, type: 3}
+  - {fileID: 7086370771954526069, guid: 6d41ea9686880a247a661a909f3cd9b0, type: 3}
+  - {fileID: 5279157549203403763, guid: 2fe26600f12e7324da0b9892caa33789, type: 3}
   - {fileID: 4034690302292739709, guid: d3fdfab5267c2bc45a301590c84d6659, type: 3}
+  - {fileID: 1806937190425314156, guid: fa150266d1db3e543865ddcd6ba18d3a, type: 3}
+  - {fileID: 1441002939601545088, guid: 00b05be2a28b4784d8349eab9fd26d51, type: 3}
   slimePrefab: {fileID: 7153729232873667270, guid: f0c01bad9477e544d9bc036d51544550, type: 3}
 --- !u!4 &684908821
 Transform:

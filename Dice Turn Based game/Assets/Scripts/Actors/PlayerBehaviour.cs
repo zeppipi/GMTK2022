@@ -17,14 +17,21 @@ public class PlayerBehaviour : Actor
     [SerializeField]
     private float maxHealthIncreasePercentage;
 
+    [SerializeField]
+    private float maxExperienceIncreasePercentage;
+
+    [Space]
     // Shop
     [SerializeField]
     private GameObject shopPanel;
 
+    [Space]
     //Dice
     [SerializeField, ReadOnly]
     private int dice;
     private Dice diceScript;
+
+    [Space]
 
     // Base Damage & Heal
     [SerializeField]
@@ -77,6 +84,8 @@ public class PlayerBehaviour : Actor
         baseDamage = (int) (baseDamage * damageIncreasePercentage);
 
         baseHeal = (int) (baseDamage * healIncreasePercentage);
+
+        neededExperience = (int) (neededExperience * maxExperienceIncreasePercentage);
         Debug.Log("level up!");
     }
     
@@ -111,6 +120,14 @@ public class PlayerBehaviour : Actor
     {
         //Change description
         playerDescription.setTempDesc("\nHealth: " + getHealth() + "\nLevel: " + getLevel());
+    }
+
+    public int getBaseHeal(){
+        return baseHeal;
+    }
+
+    public int getBaseDamage(){
+        return baseDamage;
     }
 
 }

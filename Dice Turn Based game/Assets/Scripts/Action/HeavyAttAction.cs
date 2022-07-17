@@ -32,7 +32,7 @@ public class HeavyAttAction : Action
         enemy = GameObject.FindGameObjectsWithTag("Enemy")[0].GetComponent<BaseEnemyScript>();
 
         if(rolls > delay + position){
-            enemy.hurt(damage + extraBuff);
+            enemy.hurt(((int) (player.getBaseDamage() * 1.5)) + extraBuff);
             resetExtraBuff();
             return "uses Heavy Attack";
         } else {

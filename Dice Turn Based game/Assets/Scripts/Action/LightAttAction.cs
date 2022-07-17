@@ -24,7 +24,7 @@ public class LightAttAction : Action
         // Only attack the first enemy in the array
         enemy = GameObject.FindGameObjectsWithTag("Enemy")[0].GetComponent<BaseEnemyScript>();
 
-        enemy.hurt(damage + extraBuff);
+        enemy.hurt(player.getBaseDamage() + extraBuff);
         resetExtraBuff();
         return "uses Light Attack";
     }

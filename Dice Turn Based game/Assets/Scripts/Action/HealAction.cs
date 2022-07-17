@@ -23,7 +23,7 @@ public class HealAction : Action
 
     //Execute
     public override string execute(int delay, int position, int rolls){
-        int amountHealed = heal + extraBuff;
+        int amountHealed = player.getBaseHeal() + extraBuff;
         player.healthAdder(amountHealed);
         resetExtraBuff();
         return " Heals by " + amountHealed;

@@ -9,6 +9,9 @@ public class Priest : BaseEnemyScript
 
     [SerializeField]
     private int holyAttackDamage;
+    private void Start() {
+        recalcHealth();
+    }
 
     public override string attack(int rolls, int turns){
         if(rolls % 2 == 0){

@@ -6,6 +6,9 @@ public class Skeleton : BaseEnemyScript
 {
     [SerializeField]
     private int strikeDamage;
+    private void Start() {
+        recalcHealth();
+    }
     public override string attack(int rolls, int turns)
     {
         strike();

@@ -13,11 +13,29 @@ public abstract class BaseEnemyScript : Actor
     private GameObject playerObject;
     protected PlayerBehaviour playerScript;
 
+    [SerializeField]
+    private float maxHealthIncreasePercentage;
+
+    
     //The most significant thing in this code now is just how enemies will transfer XP when it's defeated
     public override void Dies()
     {
         playerScript.xpAdder(xpReward);
         Destroy(this.gameObject);
+    }
+
+    protected int calculateHealth(int level){
+        int tempHealth = this.health;
+        for(int i = level; i < 0; i--){
+            tempHealth = (int) (this.health * maxHealthIncreasePercentage);
+        }
+        return tempHealth;
+
+    }
+
+    protected void recalcHealth(){
+        this.health = calculateHealth(this.level);
+        this.maxHealth = calculateHealth(this.level);
     }
     
     //At the start, make the enemies aware of what the player has
