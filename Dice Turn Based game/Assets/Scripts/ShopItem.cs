@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ShopItem : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class ShopItem : MonoBehaviour
     [SerializeField]
     private Image image;
     private Buff offeredBuff;
+
+    [SerializeField]
+    private TextMeshProUGUI tmp;
 
     private PlannerItemView pivToSet;
     
@@ -37,6 +41,7 @@ public class ShopItem : MonoBehaviour
             this.side = side;
             pivToSet = piv;
             this.gameObject.GetComponent<Image>().overrideSprite = buffPrefab.GetComponent<SpriteRenderer>().sprite;
+            tmp.SetText(buffPrefab.GetComponent<Buff>().getDesc(side));
         } else {
             buffPrefab = null;
             pivToSet = null;
