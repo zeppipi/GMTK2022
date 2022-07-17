@@ -46,4 +46,8 @@ public abstract class Action : MonoBehaviour
         return actionType;
     }
 
+    public int getExtraBuff(){
+        return extraBuff;
+    }
+
 }

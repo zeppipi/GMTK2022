@@ -40,7 +40,6 @@ public class FightSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log(plannerModel.name);
         if(enablingCondition() == true){
             enableFightButton();
         } else {
@@ -78,10 +77,10 @@ public class FightSystem : MonoBehaviour
     }
 
     public void fightClickButton(){
-        //toggler.onTogglePlanner();    this would not be very nessecary anymore
         
         // Roll Dice
-        int rolls = dice.roll();
+        // int rolls = dice.roll();
+        int rolls = 1;
         turns += 1;
         logManager.setDiceRoll(rolls);
         
@@ -117,6 +116,5 @@ public class FightSystem : MonoBehaviour
         }
         // Clear the button object
         plannerModel.clearButtons();
-        player.levelUp();
     }
 }

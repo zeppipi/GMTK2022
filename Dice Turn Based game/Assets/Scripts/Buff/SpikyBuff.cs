@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HolySide : Buff
+public class SpikyBuff : Buff
 {
     [SerializeField]
     private int buffAmount;
     
-    private void Start() {
-        this.buffType = "Defensive";
-        this.color = Color.blue;
-    }
     public override int apply(){
         return buffAmount;
+    }
+
+    public override string getBuffType(){
+        return "Offensive";
     }
 }

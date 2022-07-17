@@ -10,9 +10,7 @@ public abstract class Buff : MonoBehaviour
 
     public Color color = Color.gray;
 
-    public string getBuffType(){
-        return buffType;
-    }
+    public abstract string getBuffType();
 
     public abstract int apply();
 }

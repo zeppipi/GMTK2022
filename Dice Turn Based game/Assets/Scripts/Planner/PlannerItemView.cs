@@ -13,7 +13,7 @@ public class PlannerItemView : MonoBehaviour
     [SerializeField]
     private Button button;
 
-    private List<Buff> buffs = new List<Buff>();
+    public List<Buff> buffs = new List<Buff>();
     private int position = -1;
     
     // Start is called before the first frame update
@@ -27,6 +27,9 @@ public class PlannerItemView : MonoBehaviour
     }
 
     private bool isBuffValid(Action action, Buff buff){
+        if(action == null && buff == null){
+            return false;
+        } else if (buff == null){}
         // check if buff is valid on this action
         if(action.getActionType().Equals(buff.getBuffType())){
             return true;
@@ -37,24 +40,24 @@ public class PlannerItemView : MonoBehaviour
     }
 
     public Action GetAction(){
-        // Loop through all buffs
-        for(int i = 0; i < buffs.Count; i++){
-            
-
-            // If Buff is able to buff Action
-            if (isBuffValid(action, buffs[i])){
-                // Apply the buff
-                action.addExtraBuff(buffs[i].apply());
-            }
-        }
         
-
         return action;
     }
 
     public void setAction(GameObject newActionObject){  
         if (newActionObject != null) {
             action = newActionObject.GetComponent<Action>();
+            // Loop through all buffs
+            for(int i = 0; i < buffs.Count; i++){
+                
+                // If Buff is able to buff Action
+                if (isBuffValid(action, buffs[i])){
+                    // Apply the buff
+                    action.addExtraBuff(buffs[i].apply());
+
+                }
+            }
+            
         } else {
             action = null;
         }
