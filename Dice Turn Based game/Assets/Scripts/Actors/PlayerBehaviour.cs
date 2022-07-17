@@ -43,25 +43,19 @@ public class PlayerBehaviour : Actor
     [SerializeField]
     private Animator playerAnimator;
 
+    //Description
+    private Description playerDescription;
+
     //Proccess before the game starts
     void Start()
     {
         diceScript = this.GetComponent<Dice>();
         playerAnimator = this.GetComponent<Animator>();
-    }
-    
-    //Execute the moves
-    public override void executeMoves()
-    {
-        //Roll dice
-        dice = diceScript.roll();
-
-        //Play Moves
-        for(int index = 0; index < dice; index++)
-        {
-            this.actionsList[index].execute();   //This is assuming the actions class has an execute function
-        }
-
+        playerDescription = this.GetComponent<Description>();
+        
+        //Keep track of the description
+        playerDescription.setTempDesc("\nHealth: " + getHealth() + "\nLevel: " + getLevel());
+        playerDescription.setDesc(playerDescription.getDesc());
     }
 
     //Player has leveled up
@@ -111,6 +105,12 @@ public class PlayerBehaviour : Actor
     
     public int getHealth(){
         return health;
+    }
+
+    public void updateDesc()
+    {
+        //Change description
+        playerDescription.setTempDesc("\nHealth: " + getHealth() + "\nLevel: " + getLevel());
     }
 
 }

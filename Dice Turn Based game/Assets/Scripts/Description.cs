@@ -10,6 +10,12 @@ public class Description : MonoBehaviour
     [SerializeField]
     private string description;
 
+    //For any progrommatically made descriptions
+    private string temp_description = "";
+
+    //Show result description of temp and not
+    private string res_description;
+
     //Textbox here
     [SerializeField]
     private TextMeshProUGUI descBox;
@@ -17,7 +23,8 @@ public class Description : MonoBehaviour
     //Message when mouse is over the thing
     void OnMouseOver() 
     {
-        descBox.SetText(description);    
+        this.res_description = description + temp_description;
+        descBox.SetText(res_description);    
     }
 
     //Get rid of text when mouse isnt over the thing
@@ -36,4 +43,14 @@ public class Description : MonoBehaviour
     {
         return description;
     }
+
+    public void setTempDesc(string description)
+    {
+        this.temp_description = description;
+    }
+
+    public string getTempDesc()
+    {
+        return temp_description;
+    }    
 }

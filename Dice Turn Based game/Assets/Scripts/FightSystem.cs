@@ -81,8 +81,8 @@ public class FightSystem : MonoBehaviour
         {
             Action action = buttonObjects[index].GetComponent<PlannerItemView>().GetAction();
             string playerLog = "You " + action.execute(action.getDelay(), index, rolls);   //This is assuming the actions class has an execute function
-
             logManager.addLog(playerLog);
+
         }
 
         // Play the player animation
@@ -92,11 +92,13 @@ public class FightSystem : MonoBehaviour
         for(int i = 0; i < enemies.Length; i++){
             BaseEnemyScript enemyScript = enemies[i].GetComponent<BaseEnemyScript>();
             string enemyLog = enemyScript.attack(rolls, turns);
-
             logManager.addLog(enemyLog);
         }
+        
         // Clear the button object
         plannerModel.clearButtons();
-        player.levelUp();
+
+        //Update description
+        player.updateDesc();
     }
 }
