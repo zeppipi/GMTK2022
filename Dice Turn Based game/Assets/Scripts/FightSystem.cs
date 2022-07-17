@@ -8,8 +8,7 @@ public class FightSystem : MonoBehaviour
     //A number to set a delay in which the logs show up in terms of seconds
     [SerializeField]
     private float textDelay;
-    private string stringLog;   //bothcing it but should work
-    
+
     [SerializeField]
     private Planner plannerModel;
 
@@ -69,12 +68,10 @@ public class FightSystem : MonoBehaviour
         button.onClick.AddListener(() => fightClickButton());
         
     }
-
     public void fightClickButton(){
-        
+        logManager.clearArray();
         // Roll Dice
-        // int rolls = dice.roll();
-        int rolls = 1;
+        int rolls = dice.roll();
         turns += 1;
         logManager.setDiceRoll(rolls);
         
