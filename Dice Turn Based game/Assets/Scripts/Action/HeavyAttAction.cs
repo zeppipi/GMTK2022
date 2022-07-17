@@ -24,7 +24,7 @@ public class HeavyAttAction : Action
     }
 
     //Execute
-    public override void execute(int delay, int position, int rolls){
+    public override string execute(int delay, int position, int rolls){
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehaviour>();
 
         // Only attack the first enemy in the array
@@ -32,9 +32,9 @@ public class HeavyAttAction : Action
 
         if(rolls > delay + position){
             enemy.hurt(damage);
-            Debug.Log("ACTION: Heavy Attack");
+            return "uses Heavy Attack";
         } else {
-            Debug.Log("ACTION: Heavy Attack Failed");
+            return "tried to use Heavy Attack, but failed";
         }
 
         

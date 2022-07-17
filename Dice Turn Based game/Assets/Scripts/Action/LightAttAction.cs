@@ -16,7 +16,7 @@ public class LightAttAction : Action
         this.ID = "LightAttack";
     }
 
-    public override void execute(int delay, int position, int rolls){
+    public override string execute(int delay, int position, int rolls){
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehaviour>();
 
         // Only attack the first enemy in the array
@@ -24,9 +24,13 @@ public class LightAttAction : Action
 
         enemy.hurt(damage);
 
-        Debug.Log("ACTION: light Attack");
+        return "uses Light Attack";
     }
     public new string getId(){
         return ID;
+    }
+
+    public void setDamage(int damage){
+        this.damage = damage;
     }
 }
