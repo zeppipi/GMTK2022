@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4034690302292739709
+--- !u!1 &7153729232873667270
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,57 +8,55 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2859024851302161613}
-  - component: {fileID: 2203275328514939453}
-  - component: {fileID: 6057688471772015628}
+  - component: {fileID: 5572938478011695661}
+  - component: {fileID: 4203443303649753583}
+  - component: {fileID: 494180674730097512}
   m_Layer: 0
-  m_Name: Pawn
+  m_Name: Slime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2859024851302161613
+--- !u!4 &5572938478011695661
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4034690302292739709}
+  m_GameObject: {fileID: 7153729232873667270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.9939153, y: 0.14525266, z: 3.5489645}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2203275328514939453
+--- !u!114 &4203443303649753583
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4034690302292739709}
+  m_GameObject: {fileID: 7153729232873667270}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8408d6fa9bb964a4fa96d9b2d4986e64, type: 3}
+  m_Script: {fileID: 11500000, guid: b17a1d094f5e81345af13810948ba805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
-  level: 1
+  health: 200
+  maxHealth: 200
+  level: 0
   actionsList: []
-  xpReward: 0
-  lightAttackDamage: 0
-  increasePercentage: 0
---- !u!212 &6057688471772015628
+  xpReward: 5
+--- !u!212 &494180674730097512
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4034690302292739709}
+  m_GameObject: {fileID: 7153729232873667270}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -93,12 +91,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 01c7bd1801da25a4fa0b4574497564e6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 81ac1a4283cdb574691bd4f4728d0974, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
