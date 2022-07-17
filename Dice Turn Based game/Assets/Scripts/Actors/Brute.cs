@@ -11,7 +11,7 @@ public class Brute : BaseEnemyScript
     [SerializeField]
     private int heavyStrikeDamage;
  
-    public override string attack(int rolls){
+    public override string attack(int rolls, int turns){
         // Every 6 Rolls hit a heavy attack on the player
         if (rolls == 6){
             heavyStrike();

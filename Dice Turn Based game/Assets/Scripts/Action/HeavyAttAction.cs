@@ -20,6 +20,7 @@ public class HeavyAttAction : Action
     }
 
     private void Start() {
+        this.actionType = "Offensive";
 
     }
 
@@ -31,7 +32,8 @@ public class HeavyAttAction : Action
         enemy = GameObject.FindGameObjectsWithTag("Enemy")[0].GetComponent<BaseEnemyScript>();
 
         if(rolls > delay + position){
-            enemy.hurt(damage);
+            enemy.hurt(damage + extraBuff);
+            resetExtraBuff();
             return "uses Heavy Attack";
         } else {
             return "tried to use Heavy Attack, but failed";

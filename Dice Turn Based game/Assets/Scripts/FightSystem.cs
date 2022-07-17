@@ -8,6 +8,8 @@ public class FightSystem : MonoBehaviour
     [SerializeField]
     private Planner plannerModel;
 
+    private int turns = 0;
+
     [SerializeField]
     private TogglePlanner toggler;
 
@@ -69,6 +71,7 @@ public class FightSystem : MonoBehaviour
         toggler.onTogglePlanner();
         // Roll Dice
         int rolls = dice.roll();
+        turns += 1;
         logManager.setDiceRoll(rolls);
         // Execute from 1 to dice rolled
         PlayerBehaviour player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehaviour>();
@@ -82,7 +85,7 @@ public class FightSystem : MonoBehaviour
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         for(int i = 0; i < enemies.Length; i++){
             BaseEnemyScript enemyScript = enemies[i].GetComponent<BaseEnemyScript>();
-            string enemyLog = enemyScript.attack(rolls);
+            string enemyLog = enemyScript.attack(rolls, turns);
             logManager.setCurrentLog(enemyLog);
         }
         // Clear the button object
