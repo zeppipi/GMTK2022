@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class FightSystem : MonoBehaviour
 {
+    //A number to set a delay in which the logs show up in terms of seconds
+    [SerializeField]
+    private float textDelay;
+    private string stringLog;   //bothcing it but should work
+    
     [SerializeField]
     private Planner plannerModel;
 
@@ -66,10 +71,14 @@ public class FightSystem : MonoBehaviour
         
     }
 
-    
+    private void setLog()
+    {
+        Debug.Log("reached!");
+        logManager.setCurrentLog(this.stringLog);
+    }
 
     public void fightClickButton(){
-        toggler.onTogglePlanner();
+        //toggler.onTogglePlanner();    this would not be very nessecary anymore
         
         // Roll Dice
         int rolls = dice.roll();
@@ -81,8 +90,15 @@ public class FightSystem : MonoBehaviour
         for(int index = 0; index < rolls; index++)
         {
             Action action = buttonObjects[index].GetComponent<PlannerItemView>().GetAction();
-            string playerLog = action.execute(action.getDelay(), index, rolls);   //This is assuming the actions class has an execute function
-            logManager.setCurrentLog(playerLog);
+            string playerLog = "You " + action.execute(action.getDelay(), index, rolls);   //This is assuming the actions class has an execute function
+            this.stringLog = playerLog;
+
+            Debug.Log(textDelay - Time.deltaTime);
+            
+            //Delay
+            Invoke("setLog", textDelay);
+            
+            //logManager.setCurrentLog(playerLog);
         }
 
         // Play the player animation
@@ -92,7 +108,12 @@ public class FightSystem : MonoBehaviour
         for(int i = 0; i < enemies.Length; i++){
             BaseEnemyScript enemyScript = enemies[i].GetComponent<BaseEnemyScript>();
             string enemyLog = enemyScript.attack(rolls, turns);
-            logManager.setCurrentLog(enemyLog);
+            this.stringLog = enemyLog;
+
+            //Delay
+            Invoke("setLog", textDelay);
+            
+            //logManager.setCurrentLog(enemyLog);
         }
         // Clear the button object
         plannerModel.clearButtons();

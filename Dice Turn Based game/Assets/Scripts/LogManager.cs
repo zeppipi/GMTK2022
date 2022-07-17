@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 
 public class LogManager : MonoBehaviour
-{
+{   
     [SerializeField]
     private TextMeshProUGUI diceRolls;
 
