@@ -12,7 +12,7 @@ public abstract class Action : MonoBehaviour
     protected string actionType;
 
     //The action's delay
-    protected int delay = 0;
+    protected int delay;
 
     protected int extraBuff = 0;
     

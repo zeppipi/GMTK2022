@@ -9,8 +9,6 @@ public class HeavyAttAction : Action
     //Set damage and delay
     [SerializeField]
     private int damage;
-    [SerializeField]
-    private int delay;
 
     private PlayerBehaviour player;
     private BaseEnemyScript enemy;
@@ -21,7 +19,7 @@ public class HeavyAttAction : Action
 
     private void Start() {
         this.actionType = "Offensive";
-
+        this.delay = 1;
     }
 
     //Execute
@@ -30,7 +28,7 @@ public class HeavyAttAction : Action
 
         // Only attack the first enemy in the array
         enemy = GameObject.FindGameObjectsWithTag("Enemy")[0].GetComponent<BaseEnemyScript>();
-
+        Debug.Log(delay + " " + position + "IM HERE");
         if(rolls > delay + position){
             enemy.hurt(((int) (player.getBaseDamage() * 1.5)) + extraBuff);
             resetExtraBuff();
