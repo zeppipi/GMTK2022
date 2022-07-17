@@ -108,7 +108,7 @@ MonoBehaviour:
   neededExperience: 100
   healLevelUpPercentage: 0
   maxHealthIncreasePercentage: 0
-  shopPanel: {fileID: 5631436852591518894, guid: 03b31df209a9bd24d9cc5273ae567766, type: 3}
+  shopPanel: {fileID: 0}
   dice: 0
   baseDamage: 0
   damageIncreasePercentage: 0
