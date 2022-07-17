@@ -5,10 +5,10 @@ using UnityEngine;
 public class Priest : BaseEnemyScript
 {
     [SerializeField]
-    private int healNumber;
+    private float healNumber;
 
     [SerializeField]
-    private int holyAttackDamage;
+    private float holyAttackDamage;
 
 
     public override string attack(int rolls, int turns){
@@ -23,10 +23,10 @@ public class Priest : BaseEnemyScript
     }
     
     private void purify(){
-        this.healthAdder(healNumber);
+        this.healthAdder((int) (baseHeal * healNumber));
     }
 
     private void holyAttack(){
-        playerScript.hurt(holyAttackDamage);
+        playerScript.hurt((int) (baseDamage * holyAttackDamage));
     }
 }

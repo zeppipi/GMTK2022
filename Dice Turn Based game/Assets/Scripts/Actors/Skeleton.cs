@@ -5,7 +5,7 @@ using UnityEngine;
 public class Skeleton : BaseEnemyScript
 {
     [SerializeField]
-    private int strikeDamage;
+    private float strikeDamage;
 
     public override string attack(int rolls, int turns)
     {
@@ -14,7 +14,7 @@ public class Skeleton : BaseEnemyScript
     }
 
     private void strike(){
-        playerScript.hurt(strikeDamage);
+        playerScript.hurt((int) (baseDamage * strikeDamage));
     }
     
 }

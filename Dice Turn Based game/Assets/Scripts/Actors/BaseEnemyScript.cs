@@ -14,6 +14,12 @@ public abstract class BaseEnemyScript : Actor
     protected PlayerBehaviour playerScript;
 
     [SerializeField]
+    protected int baseDamage;
+
+    [SerializeField]
+    protected int baseHeal;
+
+    [SerializeField]
     private float maxHealthIncreasePercentage;
 
     //Enemy Description
@@ -34,6 +40,21 @@ public abstract class BaseEnemyScript : Actor
         return tempHealth;
     }
 
+    private int calculateBaseDamage(int level){
+        int tempHealth = this.baseDamage;
+        for(int i = level; i > 0; i--){
+            tempHealth += (int) (this.baseDamage * 0.3);
+        }
+        return tempHealth;
+    }
+
+    private int calculateBaseHeal(int level){
+        int tempHealth = this.baseHeal;
+        for(int i = level; i > 0; i--){
+            tempHealth += (int) (this.baseHeal * 0.3);
+        }
+        return tempHealth;
+    }
 
     //At the start, make the enemies aware of what the player has
     void Start()
@@ -43,6 +64,8 @@ public abstract class BaseEnemyScript : Actor
         int newHealth = calculateHealth(this.level);
         setHealth(newHealth);
         setMaxHealth(newHealth);
+        baseDamage = calculateBaseDamage(this.level);
+        baseHeal = calculateBaseHeal(this.level);
         enemyDescription = this.GetComponent<Description>();
         
         //Keep track of the description

@@ -5,9 +5,9 @@ using UnityEngine;
 public class BombSlime : BaseEnemyScript
 {
     [SerializeField]
-    private int pounceDamage;
+    private float pounceDamageMultiplier;
     [SerializeField]
-    private int explosionDamage;
+    private float explosionDamageMultiplier;
 
  
     public override string attack(int rolls, int turns){
@@ -22,11 +22,12 @@ public class BombSlime : BaseEnemyScript
     }
 
     private void pounce(){
-        playerScript.hurt(pounceDamage);
+        playerScript.hurt((int) (baseDamage * pounceDamageMultiplier));
     }
 
     private void explode(){
-        playerScript.hurt(explosionDamage);
-        this.hurt(explosionDamage - (int) (explosionDamage * 0.8));
+        int damage = (int) (baseDamage * pounceDamageMultiplier);
+        playerScript.hurt(damage);
+        this.hurt(damage - (int) (damage * 0.8));
     }
 }

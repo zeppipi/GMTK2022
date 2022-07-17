@@ -5,7 +5,7 @@ using UnityEngine;
 public class Goblin : BaseEnemyScript
 {
     [SerializeField]
-    private int strikeDamage;
+    private float strikeDamage;
     public override string attack(int rolls, int turns)
     {
         if (turns % 2 != 0){
@@ -16,6 +16,6 @@ public class Goblin : BaseEnemyScript
         }
     }
     private void strike(){
-        playerScript.hurt(strikeDamage);
+        playerScript.hurt((int) (baseDamage * strikeDamage));
     }
 }

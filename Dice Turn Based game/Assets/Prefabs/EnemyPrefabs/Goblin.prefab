@@ -52,8 +52,10 @@ MonoBehaviour:
   level: 1
   actionsList: []
   xpReward: 25
+  baseDamage: 15
+  baseHeal: 0
   maxHealthIncreasePercentage: 0.3
-  strikeDamage: 5
+  strikeDamage: 1.2
 --- !u!212 &4231776469526717471
 SpriteRenderer:
   m_ObjectHideFlags: 0

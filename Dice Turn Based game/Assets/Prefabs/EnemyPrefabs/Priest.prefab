@@ -52,9 +52,11 @@ MonoBehaviour:
   level: 3
   actionsList: []
   xpReward: 100
+  baseDamage: 10
+  baseHeal: 10
   maxHealthIncreasePercentage: 0.3
-  healNumber: 10
-  holyAttackDamage: 10
+  healNumber: 1.2
+  holyAttackDamage: 1.5
 --- !u!212 &8189337773997058553
 SpriteRenderer:
   m_ObjectHideFlags: 0

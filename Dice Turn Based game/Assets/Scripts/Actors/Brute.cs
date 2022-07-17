@@ -6,10 +6,10 @@ public class Brute : BaseEnemyScript
 {
 
     [SerializeField]
-    private int strikeDamage;
+    private float strikeDamage;
 
     [SerializeField]
-    private int heavyStrikeDamage;
+    private float heavyStrikeDamage;
 
  
     public override string attack(int rolls, int turns){
@@ -24,11 +24,11 @@ public class Brute : BaseEnemyScript
     }
 
     private void strike(){
-        playerScript.hurt(strikeDamage);
+        playerScript.hurt((int) (baseDamage * strikeDamage));
     }
 
     private void heavyStrike(){
-        playerScript.hurt(heavyStrikeDamage);
+        playerScript.hurt((int) (baseDamage * heavyStrikeDamage));
 
     }
 

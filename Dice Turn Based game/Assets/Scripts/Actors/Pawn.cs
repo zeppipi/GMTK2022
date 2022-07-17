@@ -5,7 +5,7 @@ using UnityEngine;
 public class Pawn : BaseEnemyScript
 {
     [SerializeField]
-    private int lightAttackDamage;
+    private float lightAttackDamage;
 
     [SerializeField]
     private float increasePercentage;
@@ -21,6 +21,6 @@ public class Pawn : BaseEnemyScript
     }
 
     private void Throw(int extraDamage){
-        playerScript.hurt(lightAttackDamage + extraDamage);
+        playerScript.hurt(((int) (baseDamage * lightAttackDamage)) + extraDamage);
     }
 }

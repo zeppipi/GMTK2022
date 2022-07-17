@@ -52,9 +52,11 @@ MonoBehaviour:
   level: 1
   actionsList: []
   xpReward: 100
+  baseDamage: 25
+  baseHeal: 0
   maxHealthIncreasePercentage: 0.3
-  pounceDamage: 20
-  explosionDamage: 50
+  pounceDamageMultiplier: 1.5
+  explosionDamageMultiplier: 2.5
 --- !u!212 &-2119103957917330318
 SpriteRenderer:
   m_ObjectHideFlags: 0
