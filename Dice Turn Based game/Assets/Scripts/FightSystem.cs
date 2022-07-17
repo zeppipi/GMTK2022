@@ -79,8 +79,7 @@ public class FightSystem : MonoBehaviour
     public void fightClickButton(){
         
         // Roll Dice
-        // int rolls = dice.roll();
-        int rolls = 1;
+        int rolls = dice.roll();
         turns += 1;
         logManager.setDiceRoll(rolls);
         
