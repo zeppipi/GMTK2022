@@ -35,6 +35,7 @@ public class FightSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Debug.Log(plannerModel.name);
         if(enablingCondition() == true){
             enableFightButton();
         } else {
@@ -95,5 +96,6 @@ public class FightSystem : MonoBehaviour
         }
         // Clear the button object
         plannerModel.clearButtons();
+        player.levelUp();
     }
 }

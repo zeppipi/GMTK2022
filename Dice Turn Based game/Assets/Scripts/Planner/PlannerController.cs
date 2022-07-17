@@ -18,7 +18,7 @@ public class PlannerController : MonoBehaviour
         
     }
 
-    public void addCounter(Color color, GameObject actionObject){
+    public void addCounter(Image actionImage, GameObject actionObject){
         Action action = actionObject.GetComponent<Action>();
         int counter = plannerModel.counter;
         bool isNotFull = plannerModel.counter <= 5;
@@ -31,7 +31,7 @@ public class PlannerController : MonoBehaviour
             piv.setAction(actionObject);
             piv.setPosition(counter);
             plannerView.toggleButton(button);
-            plannerView.changeImageColor(image, color);
+            plannerView.changeImage(image, actionImage);
             plannerModel.increaseCounter();
         } else {
             Debug.Log("List is Full");

@@ -9,6 +9,7 @@ public class HolySide : Buff
     
     private void Start() {
         this.buffType = "Defensive";
+        this.color = Color.blue;
     }
     public override int apply(){
         return buffAmount;

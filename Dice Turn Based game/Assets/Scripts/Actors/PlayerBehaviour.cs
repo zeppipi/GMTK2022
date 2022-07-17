@@ -11,10 +11,33 @@ public class PlayerBehaviour : Actor
     [SerializeField]
     private int neededExperience;   //how much xp need for a level up
 
+    [SerializeField]
+    private float healLevelUpPercentage;
+
+    [SerializeField]
+    private float maxHealthIncreasePercentage;
+
+    // Shop
+    [SerializeField]
+    private GameObject shopPanel;
+
     //Dice
     [SerializeField, ReadOnly]
     private int dice;
     private Dice diceScript;
+
+    // Base Damage & Heal
+    [SerializeField]
+    private int baseDamage;
+
+    [SerializeField]
+    private float damageIncreasePercentage;
+
+    [SerializeField]
+    private int baseHeal;
+
+    [SerializeField]
+    private float healIncreasePercentage;
 
     //Animator
     [SerializeField]
@@ -42,9 +65,24 @@ public class PlayerBehaviour : Actor
     }
 
     //Player has leveled up
-    void levelUp()
+    public void levelUp()
     {
         levelSetter(this.level + 1);
+        // Call the shop
+        shopPanel.SetActive(true);
+        shopPanel.GetComponent<ShopChoices>().setItems();
+
+        // add health abit
+        int healAmount = (int) (healLevelUpPercentage * maxHealth);
+        this.healthAdder(healAmount);
+
+        // increase max health
+        maxHealth = (int) (maxHealth * maxHealthIncreasePercentage);
+
+        // increase my base damage and base heal
+        baseDamage = (int) (baseDamage * damageIncreasePercentage);
+
+        baseHeal = (int) (baseDamage * healIncreasePercentage);
         Debug.Log("level up!");
     }
     

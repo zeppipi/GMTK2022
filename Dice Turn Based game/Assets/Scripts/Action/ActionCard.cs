@@ -19,7 +19,7 @@ public abstract class ActionCard : MonoBehaviour
     }
 
     public void addActionOnClick(){
-        plannerController.addCounter(image.color, actionObject);
+        plannerController.addCounter(image, actionObject);
     }
     
 
