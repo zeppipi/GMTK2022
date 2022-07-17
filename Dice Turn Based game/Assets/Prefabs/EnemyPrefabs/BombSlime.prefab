@@ -50,7 +50,7 @@ MonoBehaviour:
   level: 1
   actionsList: []
   xpReward: 100
-  maxHealthIncreasePercentage: 3
+  maxHealthIncreasePercentage: 0.3
   pounceDamage: 20
   explosionDamage: 50
 --- !u!212 &-2119103957917330318

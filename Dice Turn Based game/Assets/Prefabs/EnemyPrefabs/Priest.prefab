@@ -50,6 +50,7 @@ MonoBehaviour:
   level: 1
   actionsList: []
   xpReward: 100
+  maxHealthIncreasePercentage: 0.3
   healNumber: 10
   holyAttackDamage: 10
 --- !u!212 &8189337773997058553

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4231776469526717471}
   m_Layer: 0
   m_Name: Goblin
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,9 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 65
   maxHealth: 65
-  level: 0
+  level: 1
   actionsList: []
   xpReward: 25
+  maxHealthIncreasePercentage: 0.3
   strikeDamage: 5
 --- !u!212 &4231776469526717471
 SpriteRenderer:

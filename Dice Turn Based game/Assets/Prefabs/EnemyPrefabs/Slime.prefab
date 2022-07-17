@@ -52,6 +52,7 @@ MonoBehaviour:
   level: 0
   actionsList: []
   xpReward: 25
+  maxHealthIncreasePercentage: 0.3
 --- !u!212 &494180674730097512
 SpriteRenderer:
   m_ObjectHideFlags: 0
