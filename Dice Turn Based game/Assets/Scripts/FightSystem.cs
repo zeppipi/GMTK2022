@@ -8,8 +8,7 @@ public class FightSystem : MonoBehaviour
     //A number to set a delay in which the logs show up in terms of seconds
     [SerializeField]
     private float textDelay;
-    private string stringLog;   //bothcing it but should work
-    
+
     [SerializeField]
     private Planner plannerModel;
 
@@ -69,15 +68,8 @@ public class FightSystem : MonoBehaviour
         button.onClick.AddListener(() => fightClickButton());
         
     }
-
-    private void setLog()
-    {
-        Debug.Log("reached!");
-        logManager.setCurrentLog(this.stringLog);
-    }
-
     public void fightClickButton(){
-        
+        logManager.clearArray();
         // Roll Dice
         int rolls = dice.roll();
         turns += 1;
@@ -89,14 +81,8 @@ public class FightSystem : MonoBehaviour
         {
             Action action = buttonObjects[index].GetComponent<PlannerItemView>().GetAction();
             string playerLog = "You " + action.execute(action.getDelay(), index, rolls);   //This is assuming the actions class has an execute function
-            this.stringLog = playerLog;
 
-            Debug.Log(textDelay - Time.deltaTime);
-            
-            //Delay
-            Invoke("setLog", textDelay);
-            
-            //logManager.setCurrentLog(playerLog);
+            logManager.addLog(playerLog);
         }
 
         // Play the player animation
@@ -106,12 +92,8 @@ public class FightSystem : MonoBehaviour
         for(int i = 0; i < enemies.Length; i++){
             BaseEnemyScript enemyScript = enemies[i].GetComponent<BaseEnemyScript>();
             string enemyLog = enemyScript.attack(rolls, turns);
-            this.stringLog = enemyLog;
 
-            //Delay
-            Invoke("setLog", textDelay);
-            
-            //logManager.setCurrentLog(enemyLog);
+            logManager.addLog(enemyLog);
         }
         // Clear the button object
         plannerModel.clearButtons();
