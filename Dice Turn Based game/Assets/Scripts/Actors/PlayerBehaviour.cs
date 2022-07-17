@@ -66,14 +66,14 @@ public class PlayerBehaviour : Actor
         this.healthAdder(healAmount);
 
         // increase max health
-        maxHealth = (int) (maxHealth * maxHealthIncreasePercentage);
+        maxHealth = maxHealth + (int) (maxHealth * maxHealthIncreasePercentage);
 
         // increase my base damage and base heal
-        baseDamage = (int) (baseDamage * damageIncreasePercentage);
+        baseDamage = baseDamage + (int) (baseDamage * damageIncreasePercentage);
 
-        baseHeal = (int) (baseDamage * healIncreasePercentage);
+        baseHeal = baseHeal + (int) (baseDamage * healIncreasePercentage);
 
-        neededExperience = (int) (neededExperience * maxExperienceIncreasePercentage);
+        neededExperience = neededExperience + (int) (neededExperience * maxExperienceIncreasePercentage);
         Debug.Log("level up!");
     }
     
