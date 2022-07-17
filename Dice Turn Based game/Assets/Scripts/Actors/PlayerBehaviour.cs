@@ -16,21 +16,29 @@ public class PlayerBehaviour : Actor
     private int dice;
     private Dice diceScript;
 
+    //Animator
+    [SerializeField]
+    private Animator playerAnimator;
+
     //Proccess before the game starts
     void Start()
     {
         diceScript = this.GetComponent<Dice>();
+        playerAnimator = this.GetComponent<Animator>();
     }
     
     //Execute the moves
     public override void executeMoves()
     {
+        //Roll dice
         dice = diceScript.roll();
 
+        //Play Moves
         for(int index = 0; index < dice; index++)
         {
             this.actionsList[index].execute();   //This is assuming the actions class has an execute function
         }
+
     }
 
     //Player has leveled up
@@ -51,11 +59,18 @@ public class PlayerBehaviour : Actor
         }
     }
 
+    //Play animtion
+    public void playAnimation()
+    {
+        playerAnimator.Play("Base Layer.AttackAnimation");
+    }
+
     //Player gets xp points
     public void xpAdder(int xp)
     {
         this.experience += xp;
     }
+    
     public int getHealth(){
         return health;
     }

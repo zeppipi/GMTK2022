@@ -67,9 +67,11 @@ public class FightSystem : MonoBehaviour
 
     public void fightClickButton(){
         toggler.onTogglePlanner();
+        
         // Roll Dice
         int rolls = dice.roll();
         logManager.setDiceRoll(rolls);
+        
         // Execute from 1 to dice rolled
         PlayerBehaviour player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehaviour>();
         for(int index = 0; index < rolls; index++)
@@ -78,6 +80,9 @@ public class FightSystem : MonoBehaviour
             string playerLog = action.execute(action.getDelay(), index, rolls);   //This is assuming the actions class has an execute function
             logManager.setCurrentLog(playerLog);
         }
+
+        // Play the player animation
+        player.playAnimation();
         
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         for(int i = 0; i < enemies.Length; i++){
