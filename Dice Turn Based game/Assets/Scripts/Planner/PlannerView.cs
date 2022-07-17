@@ -13,4 +13,8 @@ public class PlannerView : MonoBehaviour
     public void changeImageColor(Image img, Color color){
         img.color = color;
     }
+
+    public void changeImage(Image img, Image newImage){
+        img.overrideSprite = newImage.sprite;
+    }
 }

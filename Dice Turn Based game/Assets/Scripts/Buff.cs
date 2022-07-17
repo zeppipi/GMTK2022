@@ -8,6 +8,8 @@ public abstract class Buff : MonoBehaviour
     
     protected string buffType;
 
+    public Color color = Color.gray;
+
     public string getBuffType(){
         return buffType;
     }
