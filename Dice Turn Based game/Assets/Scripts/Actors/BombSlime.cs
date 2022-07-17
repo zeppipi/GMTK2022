@@ -9,9 +9,7 @@ public class BombSlime : BaseEnemyScript
     [SerializeField]
     private int explosionDamage;
 
-    private void Start() {
-        recalcHealth();
-    }
+ 
     public override string attack(int rolls, int turns){
         int ran = UnityEngine.Random.Range(1, 2);
         if (ran == 1){

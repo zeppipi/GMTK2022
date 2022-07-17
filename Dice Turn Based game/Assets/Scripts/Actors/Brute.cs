@@ -11,9 +11,6 @@ public class Brute : BaseEnemyScript
     [SerializeField]
     private int heavyStrikeDamage;
 
-    private void Start() {
-        recalcHealth();
-    }
  
     public override string attack(int rolls, int turns){
         // Every 6 Rolls hit a heavy attack on the player

@@ -43,6 +43,7 @@ public abstract class BaseEnemyScript : Actor
     {
         playerObject = GameObject.FindGameObjectWithTag("Player");
         playerScript = playerObject.GetComponent<PlayerBehaviour>();
+        recalcHealth();
     }
 
     public abstract string attack(int rolls, int turns);
