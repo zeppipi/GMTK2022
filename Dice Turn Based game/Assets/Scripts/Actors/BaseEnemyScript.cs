@@ -16,6 +16,8 @@ public abstract class BaseEnemyScript : Actor
     [SerializeField]
     private float maxHealthIncreasePercentage;
 
+    //Enemy Description
+    private Description enemyDescription;
     
     //The most significant thing in this code now is just how enemies will transfer XP when it's defeated
     public override void Dies()
@@ -44,6 +46,18 @@ public abstract class BaseEnemyScript : Actor
         playerObject = GameObject.FindGameObjectWithTag("Player");
         playerScript = playerObject.GetComponent<PlayerBehaviour>();
         recalcHealth();
+
+        enemyDescription = this.GetComponent<Description>();
+        
+        //Keep track of the description
+        enemyDescription.setTempDesc("\nHealth: " + getHealth() + "\nLevel: " + getLevel());
+        enemyDescription.setDesc(enemyDescription.getDesc());
+    }
+
+    public void updateDesc()
+    {
+        //Change description
+        enemyDescription.setTempDesc("\nHealth: " + getHealth() + "\nLevel: " + getLevel());
     }
 
     public abstract string attack(int rolls, int turns);
