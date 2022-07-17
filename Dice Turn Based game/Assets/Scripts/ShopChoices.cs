@@ -26,7 +26,8 @@ public class ShopChoices : MonoBehaviour
     public void setItems(){
         for(int i = 0; i < items.Length; i++){
             int side = dice.roll();
-            items[i].setBuff(buffs[0], side, buttonObjects[side-1].GetComponent<PlannerItemView>());
+            int randomBuff = UnityEngine.Random.Range(1, buffs.Length);
+            items[i].setBuff(buffs[randomBuff], side, buttonObjects[side-1].GetComponent<PlannerItemView>());
         }
     }
 }

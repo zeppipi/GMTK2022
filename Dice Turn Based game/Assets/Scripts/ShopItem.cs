@@ -8,6 +8,7 @@ public class ShopItem : MonoBehaviour
     [SerializeField]
     private GameObject shopPanel;
     private Button button;
+    [SerializeField]
     private Image image;
     private Buff offeredBuff;
 
@@ -35,6 +36,7 @@ public class ShopItem : MonoBehaviour
             offeredBuff = buffPrefab.GetComponent<Buff>();
             this.side = side;
             pivToSet = piv;
+            this.gameObject.GetComponent<Image>().overrideSprite = buffPrefab.GetComponent<SpriteRenderer>().sprite;
         } else {
             buffPrefab = null;
             pivToSet = null;

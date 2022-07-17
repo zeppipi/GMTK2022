@@ -65,5 +65,5 @@ abstract public class Actor : MonoBehaviour
     {
         return level;
     }
-    
+
 }
