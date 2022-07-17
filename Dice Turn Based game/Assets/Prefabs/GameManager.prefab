@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &620439127662885101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 620439127662885099}
+  - component: {fileID: 620439127662885098}
+  - component: {fileID: 4375635833333395400}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &620439127662885099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620439127662885101}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 196.34727, y: 101.27154, z: 2.0929885}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &620439127662885098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620439127662885101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2e14ca6bcb6b94c894c2f0d559da42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpawnPos: {fileID: 0}
+  playerPrefab: {fileID: 5022135226560343181, guid: 18429076f8ca371458cb6d94f257205a, type: 3}
+  enemyPrefabs:
+  - {fileID: 3367222169660575856, guid: 0ea559849a789af4d88cb7de74507738, type: 3}
+  - {fileID: 7086370771954526069, guid: 6d41ea9686880a247a661a909f3cd9b0, type: 3}
+  - {fileID: 5279157549203403763, guid: 2fe26600f12e7324da0b9892caa33789, type: 3}
+  - {fileID: 4034690302292739709, guid: d3fdfab5267c2bc45a301590c84d6659, type: 3}
+  - {fileID: 1806937190425314156, guid: fa150266d1db3e543865ddcd6ba18d3a, type: 3}
+  - {fileID: 1441002939601545088, guid: 00b05be2a28b4784d8349eab9fd26d51, type: 3}
+  slimePrefab: {fileID: 7153729232873667270, guid: f0c01bad9477e544d9bc036d51544550, type: 3}
+--- !u!114 &4375635833333395400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620439127662885101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0042916b0aa16408d841cacdd3c60d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverScreen: {fileID: 0}
