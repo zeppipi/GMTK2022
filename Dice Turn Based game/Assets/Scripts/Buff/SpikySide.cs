@@ -2,20 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HolySide : Buff
+public class SpikySide : Buff
 {
     [SerializeField]
-    private int healAmount;
+    private int damageAmount;
 
     public override int apply(){
-        target = GameObject.FindGameObjectWithTag("Player");
-        PlayerBehaviour player = target.GetComponent<PlayerBehaviour>();
-        player.healthAdder(healAmount);
+        target = GameObject.FindGameObjectsWithTag("Enemy")[0];
+        BaseEnemyScript enemy = target.GetComponent<BaseEnemyScript>();
+        enemy.hurt(damageAmount);
         return 0;
     }
     public override string getBuffType(){
         return "NotBuff";
     }
-
-    
 }
