@@ -16,7 +16,7 @@ public class SpikySide : Buff
     public override string getBuffType(){
         return "NotBuff";
     }
-    public string getDesc(int side){
+    public override string getDesc(int side){
         return "";
     }
 }

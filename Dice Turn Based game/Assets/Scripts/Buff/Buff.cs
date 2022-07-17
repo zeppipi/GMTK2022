@@ -13,4 +13,6 @@ public abstract class Buff : MonoBehaviour
     public abstract string getBuffType();
 
     public abstract int apply();
+
+    public abstract string getDesc(int side);
 }

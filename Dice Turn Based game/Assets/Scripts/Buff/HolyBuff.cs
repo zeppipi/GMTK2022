@@ -11,7 +11,7 @@ public class HolyBuff : Buff
         return buffAmount;
     }
 
-    public string getDesc(int side){
+    public override string getDesc(int side){
         return "";
     }
 

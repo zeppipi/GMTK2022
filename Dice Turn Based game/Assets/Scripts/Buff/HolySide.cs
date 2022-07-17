@@ -17,7 +17,7 @@ public class HolySide : Buff
         return "NotBuff";
     }
 
-    public string getDesc(int side){
+    public override string getDesc(int side){
         return "";
     }
 

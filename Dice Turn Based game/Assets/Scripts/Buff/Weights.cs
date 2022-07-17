@@ -18,4 +18,7 @@ public class Weights : Buff
     public override string getBuffType(){
         return "Defensive";
     }
+    public override string getDesc(int side){
+        return "";
+    }
 }
