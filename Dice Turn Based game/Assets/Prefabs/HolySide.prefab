@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d28c483b7d4d940a4b1fe9c9afb22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buffAmount: 0
+  color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  buffAmount: 20

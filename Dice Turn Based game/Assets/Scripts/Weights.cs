@@ -14,4 +14,8 @@ public class Weights : Buff
         // dice.addChances(chances);
         return 1;
     }
+
+    public override string getBuffType(){
+        return "Defensive";
+    }
 }
