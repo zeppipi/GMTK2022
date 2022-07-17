@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class ShopChoices : MonoBehaviour
 {
@@ -12,6 +14,9 @@ public class ShopChoices : MonoBehaviour
 
     [SerializeField]
     private GameObject[] buffs;
+
+    [SerializeField]
+    private TextMeshProUGUI[] texts;
     private List<GameObject> buttonObjects;
     private Dice dice;
 
@@ -28,6 +33,7 @@ public class ShopChoices : MonoBehaviour
             int side = dice.roll();
             int randomBuff = UnityEngine.Random.Range(1, buffs.Length);
             items[i].setBuff(buffs[randomBuff], side, buttonObjects[side-1].GetComponent<PlannerItemView>());
+            texts[i].SetText(buffs[randomBuff].getDesc());
         }
     }
 }

@@ -11,6 +11,10 @@ public class HolyBuff : Buff
         return buffAmount;
     }
 
+    public string getDesc(int side){
+        return "";
+    }
+
     public override string getBuffType(){
         return "Defensive";
     }
