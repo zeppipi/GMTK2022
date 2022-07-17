@@ -17,8 +17,15 @@ public class Description : MonoBehaviour
     private string res_description;
 
     //Textbox here
-    [SerializeField]
     private TextMeshProUGUI descBox;
+    private GameObject descBoxObject;
+    
+    //Get the text box
+    private void Start() 
+    {
+        descBoxObject = GameObject.FindGameObjectWithTag("Description");
+        descBox = descBoxObject.GetComponent<TextMeshProUGUI>(); 
+    }
     
     //Message when mouse is over the thing
     void OnMouseOver() 
