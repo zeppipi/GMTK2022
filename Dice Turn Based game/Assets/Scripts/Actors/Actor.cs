@@ -4,10 +4,7 @@ using UnityEngine;
 
 //Abstract class for the actors, which includes the players and enemies
 abstract public class Actor : MonoBehaviour
-{
-    //Description stat
-    private Description actorDescription;
-    
+{    
     //Basic stats
     [SerializeField]
     protected int health;
@@ -22,12 +19,24 @@ abstract public class Actor : MonoBehaviour
     [SerializeField]
     protected Actions[] actionsList;
 
+    //Actor's description
+    private Description actorDescription;
+
     //Execute the move(s)
     public virtual void executeMoves(){ }
 
     //What should be done when this actor dies?
     public virtual void Dies(){ }
 
+    void Start()
+    {
+        actorDescription = this.GetComponent<Description>();
+        
+        //Keep track of the description
+        actorDescription.setTempDesc("\nHealth: " + getHealth() + "\nLevel: " + getLevel());
+        actorDescription.setDesc(actorDescription.getDesc());
+    }
+    
     //Virtual update method, functions for any scenarios that should be detected in real time
     public virtual void Update()
     {
@@ -64,6 +73,11 @@ abstract public class Actor : MonoBehaviour
     public int getLevel()
     {
         return level;
+    }
+
+    public int getHealth()
+    {
+        return health;
     }
     
 }

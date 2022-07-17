@@ -53,18 +53,6 @@ public class PlayerBehaviour : Actor
     //Description
     private Description playerDescription;
 
-    //Proccess before the game starts
-    void Start()
-    {
-        diceScript = this.GetComponent<Dice>();
-        playerAnimator = this.GetComponent<Animator>();
-        playerDescription = this.GetComponent<Description>();
-        
-        //Keep track of the description
-        playerDescription.setTempDesc("\nHealth: " + getHealth() + "\nLevel: " + getLevel());
-        playerDescription.setDesc(playerDescription.getDesc());
-    }
-
     //Player has leveled up
     public void levelUp()
     {
@@ -110,10 +98,6 @@ public class PlayerBehaviour : Actor
     public void xpAdder(int xp)
     {
         this.experience += xp;
-    }
-    
-    public int getHealth(){
-        return health;
     }
 
     public void updateDesc()
