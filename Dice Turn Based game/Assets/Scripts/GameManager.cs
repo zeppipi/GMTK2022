@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject slimePrefab;
 
-    private int numOfEnemiesDefeated = 0;
+    private int numOfEnemiesDefeated = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
         GameObject enemyToInstatiate = enemyPrefabs[random];
         BaseEnemyScript enemyScript = enemyToInstatiate.GetComponent<BaseEnemyScript>();
         enemyScript.levelSetter(numOfEnemiesDefeated);
+
         Instantiate(enemyToInstatiate, enemySpawnPos.transform);
         
     }

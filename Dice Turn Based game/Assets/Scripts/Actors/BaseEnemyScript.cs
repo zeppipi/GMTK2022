@@ -26,20 +26,6 @@ public abstract class BaseEnemyScript : Actor
         Destroy(this.gameObject);
     }
 
-    protected int calculateHealth(int level){
-        int tempHealth = this.health;
-        for(int i = level; i < 0; i--){
-            tempHealth = (int) (this.health * maxHealthIncreasePercentage);
-        }
-        return tempHealth;
-
-    }
-
-    protected void recalcHealth(){
-        this.health = calculateHealth(this.level);
-        this.maxHealth = calculateHealth(this.level);
-    }
-    
     //At the start, make the enemies aware of what the player has
     void Start()
     {
@@ -65,4 +51,17 @@ public abstract class BaseEnemyScript : Actor
     public int getHealth(){
         return health;
     }
+
+    public int getMaxHealth(){
+        return maxHealth;
+    }
+
+    public void setHealth(int health){
+        this.health = health;
+    }
+
+    public void setMaxHealth(int maxHealth){
+        this.maxHealth = maxHealth;
+    }
+    
 }
