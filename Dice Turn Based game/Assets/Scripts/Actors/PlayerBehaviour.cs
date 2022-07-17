@@ -44,7 +44,6 @@ public class PlayerBehaviour : Actor
     public override void Update()
     {
         base.Update();
-        
         if (experience >= neededExperience)
         {
             levelUp();
@@ -57,4 +56,8 @@ public class PlayerBehaviour : Actor
     {
         this.experience += xp;
     }
+    public int getHealth(){
+        return health;
+    }
+
 }

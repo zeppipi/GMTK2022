@@ -15,7 +15,7 @@ public abstract class Action : MonoBehaviour
         this.ID = "DEFAULT_ACTION";
     }
 
-    public abstract void execute(int delay, int position, int rolls);
+    public abstract string execute(int delay, int position, int rolls);
     
     public string getId(){
         return this.ID;

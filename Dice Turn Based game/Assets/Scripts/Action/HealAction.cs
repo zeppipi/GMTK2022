@@ -22,9 +22,9 @@ public class HealAction : Action
     }
 
     //Execute
-    public override void execute(int delay, int position, int rolls){
+    public override string execute(int delay, int position, int rolls){
         player.healthAdder(heal);
-        Debug.Log("ACTION: Player Healed");
+        return " Heals by " + heal;
     }
 
     public new string getId(){

@@ -8,6 +8,8 @@ abstract public class Actor : MonoBehaviour
     //Basic stats
     [SerializeField]
     protected int health;
+
+    [SerializeField]
     protected int maxHealth;
 
     [SerializeField]
@@ -46,7 +48,6 @@ abstract public class Actor : MonoBehaviour
         } else {
             this.health += health;
         }
-        Debug.Log(this.health);
     }
 
     public void hurt(int health){
