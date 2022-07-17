@@ -174,4 +174,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: You, The player
-  descBox: {fileID: 0}
