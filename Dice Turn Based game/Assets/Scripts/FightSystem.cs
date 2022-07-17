@@ -70,12 +70,6 @@ public class FightSystem : MonoBehaviour
         
     }
 
-    private void setLog()
-    {
-        Debug.Log("reached!");
-        logManager.setCurrentLog(this.stringLog);
-    }
-
     public void fightClickButton(){
         
         // Roll Dice
@@ -90,14 +84,8 @@ public class FightSystem : MonoBehaviour
         {
             Action action = buttonObjects[index].GetComponent<PlannerItemView>().GetAction();
             string playerLog = "You " + action.execute(action.getDelay(), index, rolls);   //This is assuming the actions class has an execute function
-            this.stringLog = playerLog;
+            logManager.setCurrentLog(playerLog);
 
-            Debug.Log(textDelay - Time.deltaTime);
-            
-            //Delay
-            Invoke("setLog", textDelay);
-            
-            //logManager.setCurrentLog(playerLog);
         }
 
         // Play the player animation
@@ -107,14 +95,13 @@ public class FightSystem : MonoBehaviour
         for(int i = 0; i < enemies.Length; i++){
             BaseEnemyScript enemyScript = enemies[i].GetComponent<BaseEnemyScript>();
             string enemyLog = enemyScript.attack(rolls, turns);
-            this.stringLog = enemyLog;
-
-            //Delay
-            Invoke("setLog", textDelay);
-            
-            //logManager.setCurrentLog(enemyLog);
+            logManager.setCurrentLog(enemyLog);
         }
+        
         // Clear the button object
         plannerModel.clearButtons();
+
+        //Update description
+        player.updateDesc();
     }
 }

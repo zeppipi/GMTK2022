@@ -5,6 +5,9 @@ using UnityEngine;
 //Abstract class for the actors, which includes the players and enemies
 abstract public class Actor : MonoBehaviour
 {
+    //Description stat
+    private Description actorDescription;
+    
     //Basic stats
     [SerializeField]
     protected int health;
@@ -56,6 +59,11 @@ abstract public class Actor : MonoBehaviour
         } else {
             this.health -= health;
         }
+    }
+
+    public int getLevel()
+    {
+        return level;
     }
     
 }
