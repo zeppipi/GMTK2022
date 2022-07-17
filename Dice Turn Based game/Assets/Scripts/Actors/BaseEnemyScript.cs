@@ -26,13 +26,23 @@ public abstract class BaseEnemyScript : Actor
         Destroy(this.gameObject);
     }
 
+    private int calculateHealth(int level){
+        int tempHealth = this.health;
+        for(int i = level; i > 0; i--){
+            tempHealth += (int) (this.maxHealth * 0.3);
+        }
+        return tempHealth;
+    }
+
+
     //At the start, make the enemies aware of what the player has
     void Start()
     {
         playerObject = GameObject.FindGameObjectWithTag("Player");
         playerScript = playerObject.GetComponent<PlayerBehaviour>();
-        recalcHealth();
-
+        int newHealth = calculateHealth(this.level);
+        setHealth(newHealth);
+        setMaxHealth(newHealth);
         enemyDescription = this.GetComponent<Description>();
         
         //Keep track of the description
