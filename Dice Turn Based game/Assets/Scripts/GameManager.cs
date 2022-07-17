@@ -34,13 +34,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private int calculateHealth(int level, int health, int maxHealth){
+        int tempHealth = health;
+        for(int i = level; i > 0; i--){
+            tempHealth += (int) (maxHealth * 0.3);
+        }
+        return tempHealth;
+    }
+
     private void spawnEnemy(){
         numOfEnemiesDefeated++;
         int random = UnityEngine.Random.Range(1, enemyPrefabs.Length);
         GameObject enemyToInstatiate = enemyPrefabs[random];
         BaseEnemyScript enemyScript = enemyToInstatiate.GetComponent<BaseEnemyScript>();
         enemyScript.levelSetter(numOfEnemiesDefeated);
-
+        int newHealth = calculateHealth(numOfEnemiesDefeated, enemyScript.getHealth(), enemyScript.getMaxHealth());
+        Debug.Log(newHealth);
+        enemyScript.setHealth(newHealth);
+        enemyScript.setMaxHealth(newHealth);
+        
         Instantiate(enemyToInstatiate, enemySpawnPos.transform);
         
     }

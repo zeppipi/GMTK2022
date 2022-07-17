@@ -31,22 +31,9 @@ public abstract class BaseEnemyScript : Actor
         playerScript = playerObject.GetComponent<PlayerBehaviour>();
     }
 
+
     public abstract string attack(int rolls, int turns);
 
-    public int getHealth(){
-        return health;
-    }
-
-    public int getMaxHealth(){
-        return maxHealth;
-    }
-
-    public void setHealth(int health){
-        this.health = health;
-    }
-
-    public void setMaxHealth(int maxHealth){
-        this.maxHealth = maxHealth;
-    }
+    
     
 }

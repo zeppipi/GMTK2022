@@ -40,6 +40,7 @@ abstract public class Actor : MonoBehaviour
     //Virtual update method, functions for any scenarios that should be detected in real time
     public virtual void Update()
     {
+        Debug.Log(this.level);
         if(health <= 0)
         {
             Dies();
@@ -75,9 +76,20 @@ abstract public class Actor : MonoBehaviour
         return level;
     }
 
-    public int getHealth()
-    {
+    public int getHealth(){
         return health;
+    }
+
+    public int getMaxHealth(){
+        return maxHealth;
+    }
+
+    public void setHealth(int health){
+        this.health = health;
+    }
+
+    public void setMaxHealth(int maxHealth){
+        this.maxHealth = maxHealth;
     }
     
 }
