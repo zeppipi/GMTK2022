@@ -33,8 +33,8 @@ public class GameManager : MonoBehaviour
     }
 
     private void spawnEnemy(){
-        // int random = UnityEngine.Random.Range(1, enemyPrefabs.Length);
-        Instantiate(enemyPrefabs[2], enemySpawnPos.transform);
+        int random = UnityEngine.Random.Range(1, enemyPrefabs.Length);
+        Instantiate(enemyPrefabs[random], enemySpawnPos.transform);
     }
 
     private bool isEnemyExist(){

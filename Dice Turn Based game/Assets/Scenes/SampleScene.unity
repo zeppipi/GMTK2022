@@ -422,7 +422,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 5386140985808999455, guid: 5392fa6079e619642bd2d5fa1a632dbe, type: 3}
   - {fileID: 1806937190425314156, guid: fa150266d1db3e543865ddcd6ba18d3a, type: 3}
-  - {fileID: 7086370771954526069, guid: 6d41ea9686880a247a661a909f3cd9b0, type: 3}
+  - {fileID: 4034690302292739709, guid: d3fdfab5267c2bc45a301590c84d6659, type: 3}
   slimePrefab: {fileID: 7086370771954526069, guid: 6d41ea9686880a247a661a909f3cd9b0, type: 3}
 --- !u!4 &684908821
 Transform:
